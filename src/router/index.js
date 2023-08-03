@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import AdministradorView from '../views/AdministradorView.vue'
+import EditarCursoView from '../views/EditarCursoView.vue'
+import NotFoundComponent from '../components/NotFoundComponent.vue'
 
 Vue.use(VueRouter)
 
@@ -9,6 +12,22 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/administracion',
+    name: 'administracion',
+    component: AdministradorView
+  },
+  {
+    path: '/editarcurso/:nombre',
+    name: 'editarcurso',
+    component: EditarCursoView,
+    props: true,
+  },
+  {
+    path: "/:catchAll(.*)",
+    name: 'notfound',
+    component: NotFoundComponent
   },
   {
     path: '/about',
